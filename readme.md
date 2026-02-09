@@ -16,7 +16,7 @@ This deployment is more than a one-time project. It is a Proof of Concept (POC) 
 
 ## Deliverables
 
-A repository link containing a git repository (including `.git` folder) with your Terraform code, and a readme file with instructions for deployment. The README should also include a brief overview of your design choices.
+A repository link containing a git repository with your Terraform code, and a readme file with instructions for deployment. The README should also include a brief overview of your design choices.
 
 
 # Further Information
