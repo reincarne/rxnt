@@ -1,4 +1,25 @@
-# Hello World Site
+
+# Problem Statement
+
+The marketing department is launching a new promotional landing page that displays a 'hello world' message with the current date, pulled from a sensitive SQL database, which is cached for 5 seconds. They expect significant traffic from 10:00 AM to 8:00 PM EST, especially during the first few days of the campaign.
+
+Your task is to use Terraform to provision the Azure infrastructure to support this application. You are responsible for designing the full solution architecture to meet the requirements of a production environment.
+
+### Strategic Context
+
+This deployment is more than a one-time project. It is a Proof of Concept (POC) designed to establish a reusable and standardized pattern for deploying similar containerized applications within the organization. A successful outcome will serve as a template, allowing other teams to quickly adopt a secure and scalable architecture for their own initiatives.
+
+## Requirements
+
+- **Use Terraform** to provision all Azure infrastructure
+- **Deploy to Azure** (your choice of services)
+
+## Deliverables
+
+A repository link containing a git repository (including `.git` folder) with your Terraform code, and a readme file with instructions for deployment. The README should also include a brief overview of your design choices.
+
+
+# Further Information
 
 This site is the first version of the Hello World Site. It is composed of two projects `Site` and `Api`.
 
