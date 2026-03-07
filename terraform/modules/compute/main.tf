@@ -18,10 +18,10 @@ resource "azurerm_container_app_environment" "env" {
 
 # API Container App (internal ingress; scaled by traffic)
 resource "azurerm_container_app" "api" {
-  name                          = "api-${var.site_dns_prefix}"
-  container_app_environment_id  = azurerm_container_app_environment.env.id
-  resource_group_name           = var.resource_group_name
-  revision_mode                 = "Single"
+  name                         = "api-${var.site_dns_prefix}"
+  container_app_environment_id = azurerm_container_app_environment.env.id
+  resource_group_name          = var.resource_group_name
+  revision_mode                = "Single"
 
   template {
     min_replicas = var.api_min_replicas
@@ -39,17 +39,17 @@ resource "azurerm_container_app" "api" {
       }
 
       liveness_probe {
-        transport = "HTTP"
-        path      = "/health"
-        port      = 8080
-        interval_seconds  = 10
+        transport        = "HTTP"
+        path             = "/health"
+        port             = 8080
+        interval_seconds = 10
       }
 
       readiness_probe {
-        transport = "HTTP"
-        path      = "/health"
-        port      = 8080
-        interval_seconds  = 5
+        transport        = "HTTP"
+        path             = "/health"
+        port             = 8080
+        interval_seconds = 5
       }
     }
   }
@@ -68,10 +68,10 @@ resource "azurerm_container_app" "api" {
 
 # Site Container App (external ingress = load balancer; scaled by traffic)
 resource "azurerm_container_app" "site" {
-  name                          = "site-${var.site_dns_prefix}"
-  container_app_environment_id  = azurerm_container_app_environment.env.id
-  resource_group_name           = var.resource_group_name
-  revision_mode                 = "Single"
+  name                         = "site-${var.site_dns_prefix}"
+  container_app_environment_id = azurerm_container_app_environment.env.id
+  resource_group_name          = var.resource_group_name
+  revision_mode                = "Single"
 
   template {
     min_replicas = var.site_min_replicas
@@ -94,17 +94,17 @@ resource "azurerm_container_app" "site" {
       }
 
       liveness_probe {
-        transport = "HTTP"
-        path      = "/health"
-        port      = 8080
-        interval_seconds  = 10
+        transport        = "HTTP"
+        path             = "/health"
+        port             = 8080
+        interval_seconds = 10
       }
 
       readiness_probe {
-        transport = "HTTP"
-        path      = "/health"
-        port      = 8080
-        interval_seconds  = 5
+        transport        = "HTTP"
+        path             = "/health"
+        port             = 8080
+        interval_seconds = 5
       }
     }
   }

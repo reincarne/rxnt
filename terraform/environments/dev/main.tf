@@ -51,8 +51,8 @@ module "sql" {
   location                    = module.resource_group.location
   sql_server_name             = var.sql_server_name
   sql_database_name           = var.sql_database_name
-  sql_admin_username = azurerm_key_vault_secret.sql_admin_username.value
-  sql_admin_password = azurerm_key_vault_secret.sql_admin_password.value
+  sql_admin_username          = azurerm_key_vault_secret.sql_admin_username.value
+  sql_admin_password          = azurerm_key_vault_secret.sql_admin_password.value
   vnet_id                     = module.vnets.vnet_id
   subnet_private_endpoints_id = module.snets.subnet_private_endpoints_id
 }

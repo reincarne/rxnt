@@ -107,11 +107,11 @@ variable "redis_access_key" {
 }
 
 variable "sql_admin_username_keyname" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "sql_admin_password_keyname" {
-  type = string
+  type      = string
   sensitive = true
 }
