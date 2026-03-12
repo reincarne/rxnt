@@ -86,6 +86,8 @@ resource "null_resource" "docker_push" {
   provisioner "local-exec" {
     command = <<EOT
       echo "Logging into Azure Container Registry..."
+      
+      #az login --service-principal --username "XXX" --password "XXX" --tenant "XX"
       az acr login --name ${var.acr_name}
 
       echo "Building imageA..."

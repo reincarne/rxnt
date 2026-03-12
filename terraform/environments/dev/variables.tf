@@ -1,15 +1,3 @@
-variable "client_id" {
-  type        = string
-  description = "Service principal client ID (read from ARM_CLIENT_ID env var)"
-  sensitive   = true
-}
-
-variable "client_secret" {
-  type        = string
-  description = "Service principal client secret (read from ARM_CLIENT_SECRET env var)"
-  sensitive   = true
-}
-
 variable "resource_group_name" {
   type = string
 }
@@ -97,11 +85,6 @@ variable "sql_admin_username" {
 }
 
 variable "sql_admin_password" {
-  type      = string
-  sensitive = true
-}
-
-variable "redis_access_key" {
   type      = string
   sensitive = true
 }
