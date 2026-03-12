@@ -5,6 +5,14 @@ module "resource_group" {
   location            = var.location
 }
 
+module "keyvault" {
+  source = "../../modules/keyvault"
+
+  key_vault_name      = var.key_vault_name
+  location            = module.resource_group.location
+  resource_group_name = module.resource_group.name
+}
+
 resource "azurerm_key_vault_secret" "sql_admin_username" {
   name         = var.sql_admin_username_keyname
   value        = var.sql_admin_username
@@ -15,14 +23,6 @@ resource "azurerm_key_vault_secret" "sql_admin_password" {
   name         = var.sql_admin_password_keyname
   value        = var.sql_admin_password
   key_vault_id = module.keyvault.key_vault_id
-}
-
-module "keyvault" {
-  source = "../../modules/keyvault"
-
-  key_vault_name      = var.key_vault_name
-  location            = module.resource_group.location
-  resource_group_name = module.resource_group.name
 }
 
 module "vnets" {
